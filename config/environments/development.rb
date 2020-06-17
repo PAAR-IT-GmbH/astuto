@@ -32,8 +32,8 @@ Rails.application.configure do
   end
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
-  config.active_storage.service = :amazon
-  # config.active_storage.service = :local
+  # config.active_storage.service = :amazon
+  config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
@@ -67,4 +67,6 @@ Rails.application.configure do
   config.scs_server = ENV['SCS_SERVER']
   config.scs_key = ENV['SCS_KEY']
   config.scs_secret = ENV['SCS_SECRET']
+
+  config.webpacker.check_yarn_integrity = false
 end

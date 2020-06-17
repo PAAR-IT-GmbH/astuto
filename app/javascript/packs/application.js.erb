@@ -5,7 +5,7 @@
 import I18n from "i18n-js";
 I18n.translations = <%= I18n::JS.translations.to_json %>;
 I18n.locale = '<%= I18n.locale.to_s %>'
-I18n.foallbacks = <%= I18n.fallbacks %>
+I18n.fallbacks = <%= I18n.fallbacks %>
 
 require("@rails/ujs").start()
 require("turbolinks").start()
