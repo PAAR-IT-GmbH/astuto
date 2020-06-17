@@ -1,0 +1,7 @@
+de:
+  javascript:
+    components:
+      post:
+        like_list:
+          no_like_yet: Noch keine "Gefällt mir" Angaben.
+          who_liked: Peronen, welchen das gefällt.

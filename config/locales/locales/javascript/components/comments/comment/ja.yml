@@ -1,0 +1,13 @@
+ja:
+  javascript:
+    components:
+      comments:
+        comment:
+          post_update: 更新
+          cancel: キャンセル
+          reply: リプライ
+          'yes': はい
+          'no': いいえ
+          edit: 編集
+          are_you_sure: よろしいですか？
+          delete: 削除

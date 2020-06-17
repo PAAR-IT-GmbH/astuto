@@ -1,0 +1,8 @@
+ja:
+  javascript:
+    components:
+      comments:
+        new_comment:
+          leave_comment: コメントを書く
+          submit: 投稿
+          you_need_to_login: コメントを書くにはログインが必要です。

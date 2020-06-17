@@ -1,0 +1,12 @@
+en:
+  javascript:
+    helpers:
+      friendly_date:
+        just_now: just now
+        minute: minute
+        minutes: minutes
+        ago: " ago"
+        hour: hour
+        hours: hours
+        day: day
+        days: days

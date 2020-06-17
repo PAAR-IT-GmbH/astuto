@@ -1,0 +1,12 @@
+ja:
+  javascript:
+    helpers:
+      friendly_date:
+        just_now: 少し前
+        minute: 分
+        minutes: 分
+        ago: 前
+        hour: 時間
+        hours: 時間
+        day: 日
+        days: 日

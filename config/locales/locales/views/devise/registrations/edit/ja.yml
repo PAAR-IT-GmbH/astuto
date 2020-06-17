@@ -1,0 +1,7 @@
+ja:
+  views:
+    devise: 
+      registrations:
+        edit:
+          profile_settings: プロファイル
+          update_profile: プロファイル更新

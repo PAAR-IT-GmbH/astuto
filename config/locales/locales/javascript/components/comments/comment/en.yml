@@ -1,0 +1,13 @@
+en:
+  javascript:
+    components:
+      comments:
+        comment:
+          post_update: Post update
+          cancel: Cancel
+          reply: Reply
+          'yes': 'yes'
+          'no': 'no'
+          edit: Edit
+          are_you_sure: Are you sure?
+          delete: Delete

@@ -17,8 +17,8 @@ module App
     # the framework and any gems in your application.
 
     config.i18n.default_locale = ENV['LOCALE'] || :en
-    config.i18n.fallbacks = %i[en ja]
-    config.i18n.available_locales = %i[en ja]
+    config.i18n.fallbacks = %i[en ja de]
+    config.i18n.available_locales = %i[en ja de]
     config.time_zone = ENV['TIMEZONE'] ||'Tokyo'
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
 

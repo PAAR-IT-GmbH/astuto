@@ -1,0 +1,8 @@
+de:
+  javascript:
+    components:
+      board:
+        new_post_form:
+          title: Titel
+          submit_feedback: Feedback senden
+          description_optional: Beschreibung (optional)

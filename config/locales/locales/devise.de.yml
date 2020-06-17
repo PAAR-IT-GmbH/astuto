@@ -1,0 +1,147 @@
+de:
+  activerecord:
+    attributes:
+      user:
+        confirmation_sent_at: Bestätigung senden an
+        confirmation_token: Bestätigungstoken
+        confirmed_at: Bestätigt über
+        created_at: Erstellt über
+        current_password: Aktuelles Passwort
+        current_sign_in_at: Aktuell eingeloggt über
+        current_sign_in_ip: Aktuell eingeloggt mit IP
+        full_name: Vollständiger Name
+        email: E-Mail
+        encrypted_password: Verschlüsseltes Passwort
+        failed_attempts: Fehlerhafte Versuche
+        last_sign_in_at: Zuletzt eingeloggt über
+        last_sign_in_ip: Zuletzt eingeloggt mit IP
+        locked_at: Gesperrt über
+        password: Passwort
+        password_confirmation: Passwort Bestätigung
+        remember_created_at: Erstellt am
+        remember_me: Erinneren
+        reset_password_sent_at: Passwort zurücksetzten über
+        reset_password_token: Passwort zurücksetzten Token
+        sign_in_count: Anzahl Anmeldungen
+        unconfirmed_email: Unbestätigte E-Mail
+        unlock_token: Freischaltung Token
+        updated_at: Aktualisieren über
+    models:
+      user:
+        one: Nutzer
+        other: Nutzer
+  devise:
+    confirmations:
+      confirmed: Ihre E-Mail Adresse wurde erfolgreich bestätigt.
+      new:
+        resend_confirmation_instructions: Bestätigungsanleitung erneut senden
+      send_instructions: Sie erhalten in Kürze eine Anleitung zur Bestätigung Ihrer E-Mail Adresse per Mail.
+      send_paranoid_instructions: Wenn Ihre E-Mail Adresse bei uns hinterlegt ist, erhalten Sie in Kürze eine Anleitung zur Bestätigung der E-Mail Adresse per Mail.
+    failure:
+      already_authenticated: Sie sind bereits eingeloggt.
+      inactive: Ihr Account wurde noch nicht aktiviert.
+      invalid: Falscher %{authentication_keys} oder Passwort.
+      last_attempt: Sie haben noch einen Versuch, bevor Ihr Account gesperrt wird.
+      locked: Ihr Account ist gesperrt.
+      not_found_in_database: Falscher %{authentication_keys} oder Passwort.
+      timeout: Ihre Sitzung ist abgelaufen. Bitte melden Sie sich erneut an um fortzufahren.
+      unauthenticated: Sie müssen eingeloggt sein um fortzufahren zu können.
+      unconfirmed: Sie müssen Ihre E-Mail Adresse bestätiten um fortzufahren zu können.
+    mailer:
+      confirmation_instructions:
+        action: Meinen Account bestätigen.
+        greeting: Willkommen %{recipient}!
+        instruction: 'Sie können Ihren Account über folgenden Link bestätigen:'
+        subject: Anleitung zur Bestätigung
+      email_changed:
+        greeting: Hallo %{recipient}!
+        message: Wir möchten Sie darüber informieren, dass Ihre E-Mail Adresse zu %{email} geändert wurde.
+        subject: E-Mail Adresse geändert
+      password_change:
+        greeting: Hallo %{recipient}!
+        message: Wir möchten Sie darüber informieren, dass Ihr Passowrt geändert wurde.
+        subject: Passwort geändert
+      reset_password_instructions:
+        action: Passwort ändern
+        greeting: Hallo %{recipient}!
+        instruction: Es wurde eine Anfrage zur Änderung Ihres Passworts erstellt. Sie können dies über den folgenden Link tun.
+        instruction_2: Wenn Sie die Anfrage nicht erstellt haben, können Sie diese E-Mail ignorieren.
+        instruction_3: Ihr Passwort wird erst geändert, wenn Sie auf den obigen Link klicken und ein neues Passowrt erstellen.
+        subject: Anleitung zur Änderung
+      unlock_instructions:
+        action: Account entsperren
+        greeting: Hallo %{recipient}!
+        instruction: 'Klicken Sie auf den Link, um Ihren Account zu entsperren:' 
+        message: Ihr Account wurde wegen zu vielen falschen Anmeldungen gesperrt.
+        subject: Anleitung zum Entsperren
+    omniauth_callbacks:
+      failure: "Nicht erfolgreich als %{kind} angemeldet. Fehler: %{reason}"
+      success: Erfolgreich als %{kind} angemeldet.
+    passwords:
+      edit:
+        change_my_password: Passwort ändern
+        change_your_password: Ändern Sie Ihr Passwort
+        confirm_new_password: Bestätigen Sie Ihr Passwort
+        new_password: Neues Passwort
+      new:
+        forgot_your_password: Passwort vergessen?
+        send_me_reset_password_instructions: Anleitung zum Zurücksetzten des Passworts senden
+      no_token: Die Seite kann nicht aufgerufen werden. Bitte verwenden Sie, zum Zurücksetzten des Passworts, den Link aus der E-Mail.
+      send_instructions: Sie erhalten in Kürze eine Anleitung zum Zurücksetzten Ihres Passworts per Mail.
+      send_paranoid_instructions: Wenn Ihre E-Mail Adresse bei uns hinterlegt ist, erhalten Sie in Kürze die Anleitung zum Zurücksetzten des Passworts per Mail.
+      updated: Ihr Passwort wurde erfolgreich geändert. Sie sind nun angemeldet.
+      updated_not_active: Ihr Passwort wurde erfolgreich geändert.
+    registrations:
+      destroyed: Auf Wiedersehen! Ihr Account wurde erfolgreich gelöscht. Wir hoffen Sie bald wieder zu sehen.
+      edit:
+        are_you_sure: Sind Sie sicher?
+        cancel_my_account: Meinen Account löschen
+        currently_waiting_confirmation_for_email: 'Warte auf Bestätigung der E-Mail Adresse: %{email}'
+        leave_blank_if_you_don_t_want_to_change_it: Bitte freilassen, wenn Sie es nicht ändern möchten.
+        title: Bearbeiten %{resource}
+        unhappy: Unzufrieden?
+        update: Update
+        we_need_your_current_password_to_confirm_your_changes: Wir benötigten Ihr aktuelles Passwort um die Änderung zu bestätigen
+      new:
+        sign_up: Angemeldet
+      signed_up: Willkommen! Sie haben sich erfolgreich angemeldet.
+      signed_up_but_inactive: Sie haben sich erfolgreich angemeldet. Wir konnten Sie jedoch nicht anmelden, da Ihr Konto noch nicht aktiviert ist.
+      signed_up_but_locked: Sie haben sich erfolgreich angemeldet. Wir konnten Sie jedoch nicht anmelden, da Ihr Konto gesperrt ist.
+      signed_up_but_unconfirmed: Sie erhalten eine Link zur Besätigung per Mail.
+      update_needs_confirmation: Ihr Account wurde erfolgreich aktualisiert, bitte bestätigen Sie Ihre neue E-Mail Adresse.
+      updated: Ihr Account wurde erfolgreich aktualisiert.
+      updated_but_not_signed_in: Ihr Account wurde erfolgreich aktualisiert, bitte melden Sie sich erneut an, damit die Änderungen wirksam werden.
+    sessions:
+      already_signed_out: Erfolgreich abgemeldet.
+      new:
+        sign_in: Anmelden
+      signed_in: Erfolgreich angemeldet.
+      signed_out: Erfolgreich abgemeldet.
+    shared:
+      links:
+        back: Zurück
+        didn_t_receive_confirmation_instructions: Anleitung zur Bestätigung nicht erhalten?
+        didn_t_receive_unlock_instructions: Anleitung zum Entsperren nicht erhalten?
+        forgot_your_password: Passwort vergessen?
+        sign_in: Anmelden
+        sign_in_with_provider: Anmelden über %{provider}
+        sign_up: Angemeldet
+      minimum_password_length:
+        one: "(%{count} character minimum)"
+        other: "(%{count} characters minimum)"
+    unlocks:
+      new:
+        resend_unlock_instructions: Anleitung zum Entsperren erneut senden
+      send_instructions: Sie erhalten in Kurze eine Anleitung zum Entsperren Ihres Accounts per Mail.
+      send_paranoid_instructions: Wenn Sie bereits einen Account haben, erhalten Sie in Kürze eine Anleitung zum Entsperren Ihres Accounts per Mail.
+      unlocked: Ihr Account wurde erfolgreich entsperrt. Bitte melden Sie sich an um fortzufahren.
+  errors:
+    messages:
+      already_confirmed: wurde bereits bestätigt, bitte versuchen Sie erneut sich anzumelden
+      confirmation_period_expired: muss innerhalb von %{period} bestätigt werden, bitte fordern Sie eine neue an
+      expired: ist abgelaufen, bitte neuen anfordern
+      not_found: nicht gefunden
+      not_locked: nicht gesperrt
+      not_saved:
+        one: '1 Fehler hat das Speichern der %{resource} verhindert:'
+        other: "%{count} Fehler hat das Speichern der %{resource} verhindert:"

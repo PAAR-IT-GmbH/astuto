@@ -1,0 +1,9 @@
+de:
+  views:
+    layouts: 
+      _header:
+        profile_settings: Profil
+        sign_out: Ausloggen
+        login_signup: Einloggen
+        admin_panel: Administrationsmenü
+        full_name: Name

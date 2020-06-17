@@ -1,0 +1,8 @@
+en:
+  javascript:
+    components:
+      comments:
+        new_comment:
+          leave_comment: Leave a comment
+          submit: Submit
+          you_need_to_login: You need to log in to post comments.

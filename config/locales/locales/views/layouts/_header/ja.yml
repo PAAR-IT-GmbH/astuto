@@ -1,0 +1,9 @@
+ja:
+  views:
+    layouts: 
+      _header:
+        profile_settings: プロファイル
+        sign_out: サインアウト
+        login_signup: ログイン
+        admin_panel: 管理パネル
+        full_name: フルネーム

@@ -1,0 +1,8 @@
+de:
+  javascript:
+    components:
+      comments:
+        new_comment:
+          leave_comment: Kommentar hinterlassen
+          submit: Abschicken
+          you_need_to_login: Sie müssen eingeloggt sein, um kommentieren zu können.
