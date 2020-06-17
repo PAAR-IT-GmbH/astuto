@@ -98,7 +98,7 @@ class PostP extends React.Component<Props> {
               <h2>{post.title}</h2>
               {
                 isPowerUser && post ?
-                  <a href={`/admin/posts/${post.id}`} data-turbolinks="false">Edit</a> : null
+                  <a href={window.relative_url+`/admin/posts/${post.id}`} data-turbolinks="false">Edit</a> : null
               }
             </div>
             <div>

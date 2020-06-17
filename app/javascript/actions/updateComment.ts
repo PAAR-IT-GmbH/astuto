@@ -22,7 +22,7 @@ export const toggleCommentIsUpdate = (
   authenticityToken: string,
 ): ThunkAction<void, State, null, Action<string>> => async (dispatch) => {
   try {
-    const response = await fetch(`/posts/${postId}/comments/${commentId}`, {
+    const response = await fetch(window.relative_url+`/posts/${postId}/comments/${commentId}`, {
       method: 'PATCH',
       headers: {
         Accept: 'application/json',

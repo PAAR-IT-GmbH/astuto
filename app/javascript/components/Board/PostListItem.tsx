@@ -46,7 +46,7 @@ class PostListItem extends React.Component<Props, State> {
           authenticityToken={this.props.authenticityToken}
         />
 
-        <div onClick={() => window.location.href = `/posts/${this.props.id}`} className="postContainer">
+        <div onClick={() => window.location.href = `${window.relative_url}/posts/${this.props.id}`} className="postContainer">
           <div>
             <span className="postTitle">{this.props.title}</span>
           </div>

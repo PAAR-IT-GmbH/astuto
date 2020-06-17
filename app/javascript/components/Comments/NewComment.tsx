@@ -49,7 +49,7 @@ const NewComment = ({
             </Button>
           </React.Fragment>
         :
-          <a href="/users/sign_in" className="loginInfo">{I18n.t('javascript.components.comments.new_comment.you_need_to_login')}</a>
+          <a href={window.relative_url + "/users/sign_in"} className="loginInfo">{I18n.t('javascript.components.comments.new_comment.you_need_to_login')}</a>
       }
     </div>
     { error ? <DangerText>{error}</DangerText> : null }

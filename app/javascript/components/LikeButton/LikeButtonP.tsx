@@ -26,7 +26,7 @@ const LikeButtonP = ({
       e.stopPropagation();
       
       if (isLoggedIn) handleLikeSubmit(postId, !liked, authenticityToken);
-      else window.location.href = `/users/sign_in`;
+      else window.location.href = window.relative_url +`/users/sign_in`;
       }}
       className={`likeButton${liked ? ' liked' : ''}`}
     >

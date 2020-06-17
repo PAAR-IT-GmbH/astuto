@@ -50,7 +50,7 @@ export const requestComments = (
   dispatch(commentsRequestStart());
 
   try {
-    const response = await fetch(`/posts/${postId}/comments`);
+    const response = await fetch(window.relative_url+`/posts/${postId}/comments`);
     const json = await response.json();
     dispatch(commentsRequestSuccess(json));
   } catch (e) {

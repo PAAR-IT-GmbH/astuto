@@ -7,6 +7,8 @@ I18n.translations = <%= I18n::JS.translations.to_json %>;
 I18n.locale = '<%= I18n.locale.to_s %>'
 I18n.fallbacks = <%= I18n.fallbacks %>
 
+window.relative_url = '<%= ENV['RAILS_RELATIVE_URL_ROOT'] %>'
+
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
