@@ -11,17 +11,9 @@
   <div class="form-group">
     <%= f.label :email %>
     <%= f.email_field :email, autocomplete: "email", class: "form-control", readonly: true %>
-    <%
-=begin%>
- <small id="emailGravatarHelp" class="form-text text-muted">
-      the email is <a href="https://gravatar.com" target="_blank">gravatar</a>ized
-    </small> 
-<%
-=end%>
   </div>
 
-  <%
-=begin%>
+
  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
@@ -51,8 +43,7 @@
       we need your current password to confirm your changes
     </small>
   </div>
-<%
-=end%>
+
 
   <div class="actions">
     <%= f.submit I18n.t('views.devise.registrations.edit.update_profile'), class: "btn btn-dark btn-block" %>
@@ -60,9 +51,7 @@
 
 <% end %>
 
-<%
-=begin%>
- <br />
+<br />
 
 <div class="edit_user">
   <h3>Cancel my account</h3>
@@ -70,5 +59,3 @@
     <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger btn-block" %>
   </p>
 </div> 
-<%
-=end%>
