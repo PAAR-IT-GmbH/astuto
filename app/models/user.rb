@@ -28,11 +28,6 @@ class User < ApplicationRecord
     skip_reconfirmation!
   end
 
-  def gravatar_url
-    gravatar_id = Digest::MD5::hexdigest(email.downcase)
-    "https://secure.gravatar.com/avatar/#{gravatar_id}"
-  end
-
   def power_user?
     role == 'admin' || role == 'moderator'
   end

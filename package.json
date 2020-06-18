@@ -21,7 +21,6 @@
     "react": "^16.13.1",
     "react-activestorage-provider": "^0.8.0",
     "react-dom": "^16.13.1",
-    "react-gravatar": "^2.6.3",
     "react-image-lightbox": "^5.1.1",
     "react-infinite-scroller": "^1.2.4",
     "react-redux": "^7.2.0",
