@@ -20,9 +20,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # PUT /resource
-  def update
-    super
-  end
+  #def update
+  #  super
+  #end
 
   # DELETE /resource
   # def destroy
@@ -41,12 +41,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
   protected
 
   def update_resource(resource, params)
-    resource.update_without_password(params)
+    if params[:password].present?
+      result = resource.update_with_password(params)
+    else
+      params.delete(:password)
+      params.delete(:current_password)
+      params.delete(:password_confirmation)
+
+      result = resource.update_without_password(params)
+    end
   end
 
-  def after_update_path_for(resource)
-    edit_user_registration_path
-  end
+  #def after_update_path_for(resource)
+  #  edit_user_registration_path
+  #end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
