@@ -4,5 +4,5 @@ de:
       board:
         new_post_form:
           title: Titel
-          submit_feedback: Feedback senden
+          submit_feedback: Erstellen
           description_optional: Beschreibung (optional)
