@@ -29,7 +29,7 @@ module OmniAuth
       end
 
       def raw_info
-        @raw_info ||= access_token.get('/api/v3/app/my').parsed['data']
+        @raw_info ||= access_token.get(Rails.application.config.scs_data).parsed
       end
 
       def callback_url

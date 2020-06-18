@@ -63,6 +63,8 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
+
+  config.scs_data = ENV['SCS_DATA']
   config.scs_server = ENV['SCS_SERVER']
   config.scs_key = ENV['SCS_KEY']
   config.scs_secret = ENV['SCS_SECRET']
