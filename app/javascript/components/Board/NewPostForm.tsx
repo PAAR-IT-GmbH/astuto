@@ -51,7 +51,7 @@ const NewPostForm = ({
       <div className="form-group">
       <DirectUploadProvider 
         multiple 
-        path={window.relative_url+'/rails/active_storage/direct_uploads'}
+        directUploadsPath={window.relative_url+'/rails/active_storage/direct_uploads'}
         onSuccess={ handleAttachment } 
         render={({ handleUpload, uploads, ready }) => (
           <div>
