@@ -1,5 +1,4 @@
 import * as React from 'react';
-// import ActiveStorageProvider from 'react-activestorage-provider'
 import { DirectUploadProvider } from 'react-activestorage-provider'
 
 import Button from '../shared/Button';
@@ -52,11 +51,13 @@ const NewPostForm = ({
       <div className="form-group">
       <DirectUploadProvider 
         multiple 
+        path={window.relative_url+'/rails/active_storage/direct_uploads'}
         onSuccess={ handleAttachment } 
         render={({ handleUpload, uploads, ready }) => (
           <div>
             <input
               type="file"
+              accept="image/png, image/jpeg, image/jpg"
               disabled={!ready}
               onChange={e => {
                 handleUpload(e.currentTarget.files)
