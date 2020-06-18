@@ -6,7 +6,7 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   has_many_attached :images
-  validates :images, presence: true, blob: { content_type: ['image/png', 'image/jpg', 'image/jpeg'], size_range: 1..5.megabytes }
+  validates :images, presence: true, allow_blank: true, blob: { content_type: ['image/png', 'image/jpg', 'image/jpeg'], size_range: 1..5.megabytes }
 
   attribute :urls
 
