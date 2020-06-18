@@ -21,10 +21,10 @@
     <div class="actions">
       <%= f.submit "Log in", class: "btn btn-dark btn-block" %>
     </div>
-    <% end %>
+  <% end %>
 
-    <%= button_to 'SCS LOGIN', user_scs_omniauth_authorize_path, class: "btn btn-dark btn-block" %>
+  <%= button_to ENV["SCS_LABEL"], user_scs_omniauth_authorize_path, :form => { :class => "scs_user" }, class: "btn btn-dark btn-block" %>
 
-    <%= render "devise/shared/links" %> 
+  <%= render "devise/shared/links" %> 
 </div>
 
