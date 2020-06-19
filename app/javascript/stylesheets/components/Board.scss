@@ -26,6 +26,31 @@
       font-weight: 600;
     }
 
+    .custom-file {
+      text-align: left;
+      height: auto;
+    }
+
+    .custom-file-input {
+      cursor: pointer;
+      position: absolute;
+    }
+
+    .custom-file-label  {
+      height:auto;
+      width: 100%;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .custom-file-label::after {
+      display: none;
+    }
+
+    button {
+      width: 100%
+    }
+
     .newPostForm {
       @extend .my-2;
       width: 100%;
