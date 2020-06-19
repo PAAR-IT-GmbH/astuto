@@ -40,14 +40,3 @@ module OmniAuth
 end
 
 OmniAuth.config.add_camelization('scs', 'SCS')
-
-# Rails.application.config.middleware.use OmniAuth::Builder do
-  # configure do |config|
-  #   if !ENV['KUBERNETES_PORT'].nil? and ENV['RAILS_ENV'] == "development"
-  #     config.full_host = 'https://cloud.sitateru.local'
-  #   end
-  # end
-
-  # provider :scs, ENV['SCS_KEY'], ENV['SCS_SECRET'], scope: "trusted_client"
-    # {:provider_ignores_state => true}
-# end
