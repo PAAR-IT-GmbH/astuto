@@ -32,7 +32,9 @@ class PostsController < ApplicationController
     post = Post.new(post_params)
 
     if post.save
-      NewPostMailer.operator(post).deliver_now 
+      if !Rails.application.email_operator.empty?
+        NewPostMailer.operator(post).deliver_now 
+      end
       render json: post, status: :created
     else
       render json: {
