@@ -35,12 +35,12 @@ class User < ApplicationRecord
   class << self
     def from_omniauth(auth)
       user = User.find_by(provider: :scs, uid: auth['info']['id']) || User.new(uid: auth['info']['id'])
-      role = auth['extra']['raw_info']['type'] == 'manager' ? :moderator : :user
+      # role = auth['extra']['raw_info']['type'] == 'manager' ? :moderator : :user
       user.assign_attributes(
         provider: :scs,
         email: auth['info']['email'],
         full_name: auth['info']['name'],
-        role: role
+        # role: role
         # ext_auth_info: auth.to_json
         )
       user.skip_password_validation = true
