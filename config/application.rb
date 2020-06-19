@@ -30,6 +30,14 @@ module App
       ENV["EMAIL_CONFIRMATION"] == "yes"
     end
 
+    def email_from
+      ENV["EMAIL_FROM"]
+    end
+
+    def email_operator
+      ENV["EMAIL_OPERATOR"]
+    end
+
     def allow_registration?
       ENV["ALLOW_REGISTRATION"] == "yes"
     end
@@ -45,5 +53,7 @@ module App
     def posts_per_page
       (ENV["POSTS_PER_PAGE"] || 15).to_i
     end
+
+    
   end
 end

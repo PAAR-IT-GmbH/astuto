@@ -32,6 +32,7 @@ class PostsController < ApplicationController
     post = Post.new(post_params)
 
     if post.save
+      NewPostMailer.operator(post).deliver_now 
       render json: post, status: :created
     else
       render json: {

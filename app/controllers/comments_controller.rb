@@ -27,6 +27,7 @@ class CommentsController < ApplicationController
     comment = Comment.new(comment_params)
 
     if comment.save
+      NewCommentMailer.operator(comment).deliver_now 
       render json: comment.attributes.merge(
         { user_full_name: current_user.full_name, user_email: current_user.email}
       ), status: :created
