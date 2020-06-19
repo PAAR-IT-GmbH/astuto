@@ -1,5 +1,9 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :update]
+  if Rails.application.restricted_access?
+    before_action :authenticate_user!
+  else
+    before_action :authenticate_user!, only: [:create, :update]
+  end
   
   def index
     comments = Comment

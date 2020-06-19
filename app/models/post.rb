@@ -31,7 +31,7 @@ class Post < ApplicationRecord
   class << self
     def find_with_post_status_in(post_statuses)
       where(post_status_id: post_statuses.pluck(:id))
-    end
+    end 
 
     def search_by_name_or_description(s)
       s = s || ''

@@ -1,5 +1,9 @@
 class LikesController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :destroy]
+  if Rails.application.restricted_access?
+    before_action :authenticate_user!
+  else
+    before_action :authenticate_user!, only: [:create, :destroy]
+  end
 
   def index
     likes = Like

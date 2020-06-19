@@ -30,6 +30,14 @@ module App
       ENV["EMAIL_CONFIRMATION"] == "yes"
     end
 
+    def allow_registration?
+      ENV["ALLOW_REGISTRATION"] == "yes"
+    end
+
+    def restricted_access?
+      ENV["RESTRICTED_ACCESS"] == "yes"
+    end
+
     def show_logo?
       ENV["SHOW_LOGO"] == "yes"
     end
