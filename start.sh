@@ -21,6 +21,6 @@ if [ $ENVIRONMENT == "development" ]; then
   bundle exec foreman start
 else # production
   # Compile assets and launch server
-  ./bin/rails assets:precompile || true
+  ./bin/rails assets:precompile
   ./bin/rails server -e production
 fi
