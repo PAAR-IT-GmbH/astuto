@@ -69,7 +69,7 @@ const NewPostForm = ({
                       }
                   }}
                 />
-                <label id="imageupload" className="custom-file-label" htmlFor="customFile">Choose file</label>
+                <label id="imageupload" className="custom-file-label" htmlFor="customFile">{I18n.t('javascript.components.board.new_post_form.choose_form')}</label>
             </div>
             {uploads.map(upload => {
               switch (upload.state) {
