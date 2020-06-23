@@ -1,7 +1,0 @@
-en:
-  javascript:
-    components:
-      post:
-        like_list:
-          no_like_yet: There are no likes yet.
-          who_liked: People who liked

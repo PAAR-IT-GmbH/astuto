@@ -1,7 +1,0 @@
-de:
-  javascript:
-    components:
-      post:
-        post_update_list:
-          no_post_update: Es sind keine aktualisierten Beiträge vorhanden.
-          post_updates: aktualisierte Beiträge

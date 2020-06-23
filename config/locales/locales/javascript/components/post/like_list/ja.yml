@@ -1,7 +1,0 @@
-ja:
-  javascript:
-    components:
-      post:
-        like_list:
-          no_like_yet: まだ「いいね！」はありません。
-          who_liked: 「いいね！」したユーザー
