@@ -157,3 +157,9 @@
     }
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .postTitle {
+    color: white;
+  }
+}

@@ -167,7 +167,7 @@ class NewPost extends React.Component<Props, State> {
               { showForm ? I18n.t('javascript.components.board.new_post.cancel') : I18n.t('javascript.components.board.new_post.submit_feedback') }
             </Button>
           :
-            <a href={window.relative_url + "/users/sign_in"} className="btn btn-dark">
+            <a href={window.relative_url + "/users/sign_in"} className="btn">
               Log in / Sign up
             </a>
         }

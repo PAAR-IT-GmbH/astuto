@@ -68,10 +68,11 @@ const Comment = ({
               { I18n.t('javascript.components.comments.comment.post_update') + ': ' + (isPostUpdate ? I18n.t('javascript.components.comments.comment.yes') : I18n.t('javascript.components.comments.comment.no')) }
             </a>
             <Separator />
-            <a href={window.relative_url+`/admin/comments/${id}/edit`} data-turbolinks="false">{ I18n.t('javascript.components.comments.comment.edit') }</a>
+            <a href={window.relative_url+`/admin/comments/${id}/edit`} className="commentLink" data-turbolinks="false">{ I18n.t('javascript.components.comments.comment.edit') }</a>
             <Separator />
             <a
               href={window.relative_url+`/admin/comments/${id}`}
+              className="commentLink"
               data-method="delete"
               data-confirm= "{I18n.t('javascript.components.comments.comment.are_you_sure')}"
               data-turbolinks="false"> {I18n.t('javascript.components.comments.comment.delete')} </a>
