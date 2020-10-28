@@ -105,7 +105,8 @@ class PostP extends React.Component<Props, State> {
                 isLoggedIn={isLoggedIn}
                 authenticityToken={authenticityToken}
               />
-              <h2>{post.title}</h2>
+              <h2>{post.title} </h2>
+              <p>{post.userFullName}</p>
               {
                 isPowerUser && post ?
                   <a href={window.relative_url+`/admin/posts/${post.id}`} data-turbolinks="false">Edit</a> : null

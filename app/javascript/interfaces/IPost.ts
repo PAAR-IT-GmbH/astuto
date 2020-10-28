@@ -10,6 +10,7 @@ interface IPost {
   commentsCount: number;
   hotness: number;
   userId: number;
+  userFullName: string;
   createdAt: string;
 }
 

@@ -135,6 +135,10 @@
       .font-weight-bold;
   }
 
+  .postUser {
+    float:right;
+  }
+
   .postDetails {
     @extend
       .d-flex,

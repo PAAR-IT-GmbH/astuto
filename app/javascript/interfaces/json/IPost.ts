@@ -11,6 +11,7 @@ interface IPostJSON {
   hotness: number;
   user_id: number;
   created_at: string;
+  user_full_name: string;
 }
 
 export default IPostJSON;
