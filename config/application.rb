@@ -38,6 +38,14 @@ module App
       ENV["EMAIL_OPERATOR"]
     end
 
+    def email_greetings
+      ENV["EMAIL_GREETINGS"]
+    end
+
+    def email_author
+      ENV["EMAIL_AUTHOR"]
+    end
+
     def allow_registration?
       ENV["ALLOW_REGISTRATION"] == "yes"
     end

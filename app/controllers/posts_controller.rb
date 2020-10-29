@@ -82,6 +82,13 @@ class PostsController < ApplicationController
     end
 
     post.board_id = params[:post][:board_id] if params[:post].has_key?(:board_id)
+
+    if params[:post].has_key?(:post_status_id) && params[:post][:post_status_id] !=post.post_status_id
+      if !Rails.application.email_operator.empty?
+        UpdatePostMailer.operator(post).deliver_now 
+      end
+    end
+
     post.post_status_id = params[:post][:post_status_id] if params[:post].has_key?(:post_status_id)
 
     if post.save
