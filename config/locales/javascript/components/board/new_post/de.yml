@@ -1,0 +1,7 @@
+de:
+  javascript:
+    components:
+      board:
+        new_post:
+          cancel: Abbrechen
+          submit_feedback: Erstellen

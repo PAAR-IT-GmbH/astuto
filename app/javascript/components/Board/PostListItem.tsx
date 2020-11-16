@@ -13,6 +13,7 @@ interface Props {
   id: number;
   title: string;
   description?: string;
+  userFullName: string;
   urls?: string;
   postStatus: IPostStatus;
   likesCount: number;
@@ -46,9 +47,10 @@ class PostListItem extends React.Component<Props, State> {
           authenticityToken={this.props.authenticityToken}
         />
 
-        <div onClick={() => window.location.href = `/posts/${this.props.id}`} className="postContainer">
+        <div onClick={() => window.location.href = `${window.relative_url}/posts/${this.props.id}`} className="postContainer">
           <div>
             <span className="postTitle">{this.props.title}</span>
+            <span className="postUser">{this.props.userFullName}</span>
           </div>
           <DescriptionText limit={120}>{this.props.description}</DescriptionText>
 

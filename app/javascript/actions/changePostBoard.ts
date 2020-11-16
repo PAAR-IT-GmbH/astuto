@@ -19,7 +19,7 @@ export const changePostBoard = (
   authenticityToken: string,
 ): ThunkAction<void, State, null, Action<string>> => async (dispatch) => {
   try {
-    const response = await fetch(`/posts/${postId}`, {
+    const response = await fetch(window.relative_url+`/posts/${postId}`, {
       method: 'PATCH',
       headers: {
         Accept: 'application/json',

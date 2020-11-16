@@ -1,6 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+    
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -36,7 +36,7 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
-  config.active_storage.service = :amazon
+  config.active_storage.service = :local
 
   # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = nil
@@ -110,7 +110,10 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
+  config.scs_data = ENV['SCS_DATA']
   config.scs_server = ENV['SCS_SERVER']
-  config.scs_key = ENV['SCS_KEY'] || Rails.application.credentials[Rails.env.to_sym][:scs][:client_key]
-  config.scs_secret = ENV['SCS_SECRET'] || Rails.application.credentials[Rails.env.to_sym][:scs][:client_secret]
+  config.scs_key = ENV['SCS_KEY']
+  config.scs_secret = ENV['SCS_SECRET']
+  
+  config.webpacker.check_yarn_integrity = false
 end

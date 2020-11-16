@@ -1,0 +1,5 @@
+<%= I18n.t('email.comment.salutation') %>
+<%= I18n.t('email.comment.intro') %>
+<%= url_for(controller:'posts', action: 'show', id: @comment.post_id, only_path: false) %>
+<%= Rails.application.email_greetings %>
+<%= Rails.application.email_author %>

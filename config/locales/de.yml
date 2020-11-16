@@ -1,0 +1,22 @@
+de:
+  errors:
+    unauthorized: 'Sie sind nich berechtigt'
+    post:
+      create: 'Fehler beim Erstellen eines Beitrags: %{message}'
+      update: 'Fehler beim Aktualisieren eines Beitrags: %{message}'
+    like:
+      create: 'Fehler bei "Gefällt mir" Angabe: %{message}'
+    comment:
+      create: 'Fehler beim Erstellen eines Kommentars: %{message}'
+      update: 'Fehler beim Aktualisieren eines Beitrags: %{message}'
+  email:
+    comment:
+      subject: 'Neuer Kommentar: %{title}'
+      salutation: 'Sehr geehrte Damen und Herren,'
+      intro: 'es wurde ein neuer Kommentar zu Ihrem Beitrag hinzugefügt:'
+    post:
+      subject: 'Neuer Status: %{title}'
+      salutation: 'Sehr geehrte Damen und Herren,'
+      intro: 'der Status zu Ihrem Beitrag wurde geändert:'
+        
+      

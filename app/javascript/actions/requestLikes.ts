@@ -50,7 +50,7 @@ export const requestLikes = (
   dispatch(likesRequestStart());
 
   try {
-    const response = await fetch(`/posts/${postId}/likes`);
+    const response = await fetch(window.relative_url+`/posts/${postId}/likes`);
     const json = await response.json();
     dispatch(likesRequestSuccess(json));
   } catch (e) {

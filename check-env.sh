@@ -3,6 +3,10 @@
 # Exit immediately if a command exits with a non-zero status.
 set -e
 
+set -o allexport
+[[ -f .env ]] && source .env
+set +o allexport
+
 # Check if .env file is present
 if [ ! -f .env ]; then
 	echo "A .env file must be present. Please create a .env file in the root directory."
@@ -14,10 +18,13 @@ env_vars=(
 	"ENVIRONMENT" \
 	"DATABASE_USER" \
 	"DATABASE_PASSWORD" \
+	"STORAGE_HOST" \
 	"EMAIL_CONFIRMATION" \
+	"ALLOW_REGISTRATION" \
+	"RESTRICTED_ACCESS" \
 	"APP_NAME" \
 	"SHOW_LOGO" \
-	"POSTS_PER_PAGE" \
+	"POSTS_PER_PAGE"
 )
 
 # Check each one

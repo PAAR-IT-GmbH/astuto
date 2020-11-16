@@ -1,5 +1,9 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :update]
+  if Rails.application.restricted_access?
+    before_action :authenticate_user!
+  else
+    before_action :authenticate_user!, only: [:create, :update]
+  end
   
   def index
     comments = Comment
@@ -23,6 +27,9 @@ class CommentsController < ApplicationController
     comment = Comment.new(comment_params)
 
     if comment.save
+      if !Rails.application.email_operator.empty?
+        NewCommentMailer.operator(comment).deliver_now 
+      end
       render json: comment.attributes.merge(
         { user_full_name: current_user.full_name, user_email: current_user.email}
       ), status: :created

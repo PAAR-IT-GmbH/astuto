@@ -53,6 +53,7 @@ Rails.application.configure do
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
 
+  config.scs_data = "test"
   config.scs_server = "https://example.com"
   config.scs_key = "xxxx"
   config.scs_secret = "xxxx"

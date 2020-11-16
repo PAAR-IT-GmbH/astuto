@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Gravatar from 'react-gravatar';
 
 import ILike from '../../interfaces/ILike';
 import Spinner from '../shared/Spinner';
@@ -27,7 +26,6 @@ const LikeList = ({ likes, areLoading, error}: Props) => (
       {
         likes.map((like, i) => (
           <div className="likeListItem" key={i}>
-            <Gravatar email={like.email} size={28} className="gravatar" />
             <span className="likeListItemName">{like.fullName}</span>
           </div>
         ))

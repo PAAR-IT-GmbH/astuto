@@ -9,7 +9,7 @@ interface Props {
 }
 
 const PostListItem = ({id, title, boardName}: Props) => (
-  <a href={`/posts/${id}`} className="postLink">
+  <a href={window.relative_url+`/posts/${id}`} className="postLink">
     <div className="postListItem">
       <TitleText>{title}</TitleText>
       <UppercaseText>{boardName}</UppercaseText>

@@ -1,0 +1,7 @@
+de:
+  views:
+    devise: 
+      registrations:
+        edit:
+          profile_settings: Profil
+          update_profile: Profil aktualisieren

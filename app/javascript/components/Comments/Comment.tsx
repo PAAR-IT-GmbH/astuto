@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Gravatar from 'react-gravatar';
 
 import NewComment from './NewComment';
 import Separator from '../shared/Separator';
@@ -50,7 +49,6 @@ const Comment = ({
 }: Props) => (
   <div className="comment">
     <div className="commentHeader">
-      <Gravatar email={userEmail} size={24} className="gravatar" />
       <span className="commentAuthor">{userFullName}</span>
       { isPostUpdate ? <span className="postUpdateBadge">{I18n.t('javascript.components.comments.comment.post_update')}</span> : null }
     </div>
@@ -70,10 +68,11 @@ const Comment = ({
               { I18n.t('javascript.components.comments.comment.post_update') + ': ' + (isPostUpdate ? I18n.t('javascript.components.comments.comment.yes') : I18n.t('javascript.components.comments.comment.no')) }
             </a>
             <Separator />
-            <a href={`/admin/comments/${id}/edit`} data-turbolinks="false">{ I18n.t('javascript.components.comments.comment.edit') }</a>
+            <a href={window.relative_url+`/admin/comments/${id}/edit`} className="commentLink" data-turbolinks="false">{ I18n.t('javascript.components.comments.comment.edit') }</a>
             <Separator />
             <a
-              href={`/admin/comments/${id}`}
+              href={window.relative_url+`/admin/comments/${id}`}
+              className="commentLink"
               data-method="delete"
               data-confirm= "{I18n.t('javascript.components.comments.comment.are_you_sure')}"
               data-turbolinks="false"> {I18n.t('javascript.components.comments.comment.delete')} </a>

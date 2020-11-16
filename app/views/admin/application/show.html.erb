@@ -26,7 +26,7 @@ as well as a link to its edit page.
   <div>
     <%= link_to(
       "Back to index",
-      [namespace, resource_index_route_key(page.resource_name)],
+      resource_index_route(page.resource_name),
       class: "button"
     ) %>
   </div>

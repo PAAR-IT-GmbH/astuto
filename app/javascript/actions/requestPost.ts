@@ -48,7 +48,7 @@ export const requestPost = (
   dispatch(postRequestStart());
 
   try {
-    const response = await fetch(`/posts/${postId}.json`);
+    const response = await fetch(window.relative_url+`/posts/${postId}.json`);
     const json = await response.json();
     dispatch(postRequestSuccess(json));
   } catch (e) {

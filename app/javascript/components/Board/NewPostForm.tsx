@@ -1,5 +1,4 @@
 import * as React from 'react';
-// import ActiveStorageProvider from 'react-activestorage-provider'
 import { DirectUploadProvider } from 'react-activestorage-provider'
 
 import Button from '../shared/Button';
@@ -51,18 +50,27 @@ const NewPostForm = ({
       </div>
       <div className="form-group">
       <DirectUploadProvider 
-        multiple 
+        directUploadsPath={window.relative_url+'/rails/active_storage/direct_uploads'}
         onSuccess={ handleAttachment } 
         render={({ handleUpload, uploads, ready }) => (
           <div>
-            <input
-              type="file"
-              disabled={!ready}
-              onChange={e => {
-                handleUpload(e.currentTarget.files)
-              }
-            }
-            />
+            <div className="custom-file">
+                <input
+                  type="file"
+                  accept="image/png, image/jpeg, image/jpg"
+                  disabled={!ready}
+                  className="custom-file-input" 
+                  id="customFile"
+                  onChange={e => {
+                      console.log(e.currentTarget.files)
+                      handleUpload(e.currentTarget.files)
+                      if(e.currentTarget.files.length>0) {
+                        $("#imageupload").addClass("selected").html(e.currentTarget.files[0].name);
+                      }
+                  }}
+                />
+                <label id="imageupload" className="custom-file-label" htmlFor="customFile">{I18n.t('javascript.components.board.new_post_form.choose_form')}</label>
+            </div>
             {uploads.map(upload => {
               switch (upload.state) {
                 case 'waiting':
@@ -78,10 +86,6 @@ const NewPostForm = ({
                     <p key={upload.id}>
                       Error uploading {upload.file.name}: {upload.error}
                     </p>
-                  )
-                case 'finished':
-                  return (
-                    <p key={upload.id}>Finished uploading {upload.file.name}</p>
                   )
               }
             })}

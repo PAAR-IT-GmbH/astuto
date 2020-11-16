@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Gravatar from 'react-gravatar';
 
 import { TitleText, DangerText, CenteredMutedText, MutedText } from '../shared/CustomTexts';
 import Spinner from '../shared/Spinner';
@@ -31,7 +30,6 @@ const PostUpdateList = ({
         postUpdates.map((postUpdate, i) => (
           <div className="postUpdateListItem" key={i}>
             <div className="postUpdateListItemHeader">
-              <Gravatar email={postUpdate.userEmail} size={28} className="gravatar" />
               <span>{postUpdate.userFullName}</span>
             </div>
 

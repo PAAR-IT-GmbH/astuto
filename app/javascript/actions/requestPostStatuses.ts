@@ -49,7 +49,7 @@ export const requestPostStatuses = (): ThunkAction<void, State, null, Action<str
     dispatch(postStatusesRequestStart());
 
     try {
-      const response = await fetch('/post_statuses');
+      const response = await fetch(window.relative_url+'/post_statuses');
       const json = await response.json();
       dispatch(postStatusesRequestSuccess(json));
     } catch (e) {

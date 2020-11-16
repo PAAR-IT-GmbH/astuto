@@ -77,8 +77,6 @@ class NewPost extends React.Component<Props, State> {
 
   handleAttachment(signedIds) {
     this.setState({ images: [signedIds[0]]})
-    // const body = JSON.stringify({ post: { title: ..., image: signedIds }})
-    // fetch('/posts.json', { method: 'POST', body })
   };
 
   async submitForm(e: React.FormEvent) {
@@ -103,7 +101,7 @@ class NewPost extends React.Component<Props, State> {
     }
 
     try {
-      const res = await fetch('/posts', {
+      const res = await fetch(window.relative_url+'/posts', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -131,7 +129,7 @@ class NewPost extends React.Component<Props, State> {
         });
 
         setTimeout(() => (
-          window.location.href = `/posts/${json.id}`
+          window.location.href = window.relative_url+`/posts/${json.id}`
         ), 1000);
       } else {
         this.setState({error: json.error});
@@ -169,7 +167,7 @@ class NewPost extends React.Component<Props, State> {
               { showForm ? I18n.t('javascript.components.board.new_post.cancel') : I18n.t('javascript.components.board.new_post.submit_feedback') }
             </Button>
           :
-            <a href="/users/sign_in" className="btn btn-dark">
+            <a href={window.relative_url + "/users/sign_in"} className="btn">
               Log in / Sign up
             </a>
         }

@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Gravatar from 'react-gravatar';
 
 import Button from '../shared/Button';
 import Spinner from '../shared/Spinner';
@@ -35,13 +34,13 @@ const NewComment = ({
       {
         isLoggedIn ?
           <React.Fragment>
-            <Gravatar email={userEmail} size={36} className="currentUserAvatar" />
             <textarea
               value={body}
               onChange={handleChange}
               placeholder={I18n.t('javascript.components.comments.new_comment.leave_comment')}
               className="newCommentBody"
             />
+            <br/>
             <Button
               onClick={() => handleSubmit(body, parentId)}
               className="submitCommentButton">
@@ -49,7 +48,7 @@ const NewComment = ({
             </Button>
           </React.Fragment>
         :
-          <a href="/users/sign_in" className="loginInfo">{I18n.t('javascript.components.comments.new_comment.you_need_to_login')}</a>
+          <a href={window.relative_url + "/users/sign_in"} className="loginInfo">{I18n.t('javascript.components.comments.new_comment.you_need_to_login')}</a>
       }
     </div>
     { error ? <DangerText>{error}</DangerText> : null }

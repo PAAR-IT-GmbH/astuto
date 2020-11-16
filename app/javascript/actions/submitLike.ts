@@ -31,7 +31,7 @@ export const submitLike = (
   authenticityToken: string,
 ): ThunkAction<void, State, null, Action<string>> => async (dispatch) => {
   try {
-    const res = await fetch(`/posts/${postId}/likes`, {
+    const res = await fetch(window.relative_url+`/posts/${postId}/likes`, {
       method: isLike ? 'POST' : 'DELETE',
       headers: {
         Accept: 'application/json',

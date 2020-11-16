@@ -59,7 +59,7 @@ export const requestPosts = (
     if (searchQuery) params += `&search=${searchQuery}`;
     if (postStatusId) params += `&post_status_id=${postStatusId}`;
 
-    const response = await fetch(`/posts?${params}`);
+    const response = await fetch(window.relative_url+`/posts?${params}`);
     const json = await response.json();
     dispatch(postsRequestSuccess(json, page));
   } catch (e) {

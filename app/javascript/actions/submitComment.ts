@@ -55,7 +55,7 @@ export const submitComment = (
   dispatch(commentSubmitStart(parentId));
 
   try {
-    const res = await fetch(`/posts/${postId}/comments`, {
+    const res = await fetch(window.relative_url+`/posts/${postId}/comments`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',

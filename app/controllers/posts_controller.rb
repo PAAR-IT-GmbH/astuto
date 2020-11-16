@@ -1,5 +1,9 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :update]
+  if Rails.application.restricted_access?
+    before_action :authenticate_user!
+  else
+    before_action :authenticate_user!, only: [:create, :update]
+  end
 
   def index
     posts = Post
@@ -10,12 +14,14 @@ class PostsController < ApplicationController
         :post_status_id,
         'COUNT(DISTINCT likes.id) AS likes_count',
         'COUNT(DISTINCT comments.id) AS comments_count',
+        'users.full_name as user_full_name',
         '((LOG(COUNT(DISTINCT likes.id) + 1) + LOG(COUNT(DISTINCT comments.id) + 1)) + (EXTRACT(EPOCH FROM posts.created_at) / 45000)) AS hotness',
         "(SELECT COUNT(*) AS liked FROM likes WHERE likes.user_id=#{current_user ? current_user.id : -1} AND likes.post_id=posts.id)"
       )
+      .left_outer_joins(:user)
       .left_outer_joins(:likes)
       .left_outer_joins(:comments)
-      .group('posts.id')
+      .group('posts.id, users.id')
       .where(filter_params)
       .search_by_name_or_description(params[:search])
       .order('hotness DESC')
@@ -28,6 +34,9 @@ class PostsController < ApplicationController
     post = Post.new(post_params)
 
     if post.save
+      if !Rails.application.email_operator.empty?
+        NewPostMailer.operator(post).deliver_now 
+      end
       render json: post, status: :created
     else
       render json: {
@@ -38,8 +47,23 @@ class PostsController < ApplicationController
 
   def show
     # binding.pry
-    @post = Post.find(params[:id])
+    @post = Post.select(
+      :id,
+      :title,
+      :description,
+      :post_status_id,
+      :board_id,
+      :user_id,
+      :created_at,
+      :updated_at,
+      'users.full_name as user_full_name'
+    )
+    .left_outer_joins(:user)
+    .where(id: params[:id])
+    .first!()
+
     @post_statuses = PostStatus.select(:id, :name, :color).order(order: :asc)
+
     @board = @post.board
 
     respond_to do |format|
@@ -58,6 +82,13 @@ class PostsController < ApplicationController
     end
 
     post.board_id = params[:post][:board_id] if params[:post].has_key?(:board_id)
+
+    if params[:post].has_key?(:post_status_id) && params[:post][:post_status_id] !=post.post_status_id
+      if !Rails.application.email_operator.empty?
+        UpdatePostMailer.operator(post).deliver_now 
+      end
+    end
+
     post.post_status_id = params[:post][:post_status_id] if params[:post].has_key?(:post_status_id)
 
     if post.save

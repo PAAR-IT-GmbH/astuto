@@ -13,7 +13,7 @@
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 4px rgba(0, 0, 0, 0.6);
 }
 
-.new_user, .edit_user {
+.new_user, .edit_user, .scs_user {
   @extend .card;
 
   width: 100%;
@@ -25,6 +25,10 @@
   margin: 0 auto;
 }
 
+.scs_user {
+  margin-top: 24px;
+}
+
 .deviseLinks {
   @extend .new_user;
 
@@ -34,4 +38,23 @@
   margin-top: 24px;
 
   a { color: $astuto-black; }
+}
+
+@media (prefers-color-scheme: dark) {
+  .deviseLinks {
+    a { color: white; }
+  }
+
+  .form-control, .form-control:focus {
+    color: white;
+    background-color: $astuto-grey;
+  }
+
+  .form-control {
+    border-color: grey;
+  }
+
+  .form-control:focus {
+    border-color: white;
+  }
 }

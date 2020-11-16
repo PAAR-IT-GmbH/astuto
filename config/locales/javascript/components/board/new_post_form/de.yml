@@ -1,0 +1,9 @@
+de:
+  javascript:
+    components:
+      board:
+        new_post_form:
+          title: Titel
+          submit_feedback: Erstellen
+          description_optional: Beschreibung (optional)
+          choose_form: Bildauswahl

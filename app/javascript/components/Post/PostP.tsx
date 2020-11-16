@@ -46,12 +46,22 @@ interface Props {
   ): void;
 }
 
-class PostP extends React.Component<Props> {
+interface State {
+  isOpen: boolean;
+}
+
+class PostP extends React.Component<Props, State> {
   componentDidMount() {
     this.props.requestPost(this.props.postId);
     this.props.requestLikes(this.props.postId);
   }
+  constructor(props: Props) {
+    super(props);
 
+    this.state = {
+      isOpen: false,
+    };
+  }
   render() {
     const {
       post,
@@ -95,10 +105,11 @@ class PostP extends React.Component<Props> {
                 isLoggedIn={isLoggedIn}
                 authenticityToken={authenticityToken}
               />
-              <h2>{post.title}</h2>
+              <h2>{post.title} </h2>
+              <p>{post.userFullName}</p>
               {
                 isPowerUser && post ?
-                  <a href={`/admin/posts/${post.id}`} data-turbolinks="false">Edit</a> : null
+                  <a href={window.relative_url+`/admin/posts/${post.id}`} data-turbolinks="false">Edit</a> : null
               }
             </div>
             <div>
@@ -133,17 +144,22 @@ class PostP extends React.Component<Props> {
             </div>
             <div className='postImage'>
             {
-              (post.urls && post.urls.length > 0) ?
-                  <div>
-                    <img
-                      onClick={(e) => e.preventDefault()}
-                      alt={post.title}
-                      src={post.urls[0]}
-                      width='200'
-                    />
-                  </div>
-                : <div></div>
-            }
+            (post.urls && post.urls.length > 0) && (
+              <div>
+                <img
+                  onClick={(e) => this.setState({ isOpen: true })}
+                  alt={post.title}
+                  src={post.urls}
+                />
+              </div>
+            )}
+            {
+            this.state.isOpen && (
+              <Lightbox
+                mainSrc={post.urls}
+                onCloseRequest={() => this.setState({ isOpen: false })}
+              />
+            )}
             </div>
             <p className="postDescription">{post.description}</p>
             <MutedText>{friendlyDate(post.createdAt)}</MutedText>
